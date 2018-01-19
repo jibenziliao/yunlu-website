@@ -370,12 +370,22 @@ table {
 }
 
 .top .download-wrapper .qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: inherit;
 }
 
 .top .download-wrapper .qr-wrapper img {
   height: 140px;
   width: 140px;
+  margin-bottom: 20px;
+}
+
+.top .download-wrapper .qr-wrapper p {
+  font-size: 16px;
+  color: #FFF;
 }
 
 .top .download {
