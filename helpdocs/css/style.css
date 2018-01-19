@@ -1,0 +1,39 @@
+body {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  margin-left: 10px;
+}
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin-left: 10px;
+}
+ul li ul {
+  padding-left: 10px;
+}
+.title {
+  background-color: #0eaf53;
+  color: white;
+  padding: 10px;
+  font-size: 22px;
+}
+.back {
+  color: white;
+  width: 80px;
+  padding: 8px;
+  margin-right: 8px;
+}
+.content {
+  padding: 10px;
+}
+img.center {
+  margin: 0 auto;
+  display: block;
+}

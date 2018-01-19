@@ -1,0 +1,756 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/*
+KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
+ */
+
+
+/** 清除内外边距 **/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+
+/* structural elements 结构元素 */
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+
+/* list elements 列表元素 */
+
+pre,
+
+/* text formatting elements 文本格式元素 */
+
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+
+/* form elements 表单元素 */
+
+th,
+td
+/* table elements 表格元素 */
+
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+/** 设置默认字体 **/
+
+body,
+button,
+input,
+select,
+textarea
+/* for ie */
+
+{
+  font: 12px/1.2 \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+
+/* 将斜体扶正 */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+
+
+/* 统一等宽字体 */
+
+small {
+  font-size: 12px;
+}
+
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+
+/** 重置列表元素 **/
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+/** 重置文本格式元素 **/
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/** 禁用苹果设备默认的点击半透明背景 **/
+
+div,
+a,
+img,
+span,
+p,
+ul,
+li,
+input {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+
+/** 重置表单元素 **/
+
+legend {
+  color: #000;
+}
+
+
+/* for ie6 */
+
+fieldset,
+img {
+  border: 0;
+}
+
+
+/* img 搭车：让链接里的 img 无边框 */
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+
+
+/* 注：optgroup 无法扶正 */
+
+
+/** 重置表格元素 **/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/** 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 **/
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #F5F5F5;
+}
+
+
+/** 定义滚动条轨道 内阴影+圆角 **/
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+
+/** 定义滑块 内阴影+圆角 **/
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+
+/* @media screen and (min-width: 1200px) { */
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.flex-v-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flex-h-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.body {
+  min-width: 1200px;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 90px;
+  width: 100%;
+  min-width: 1200px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.header .wrapper {
+  width: 1190px;
+  margin: 0 auto;
+  height: inherit;
+  position: relative;
+}
+
+.header .logo-wrapper {
+  position: absolute;
+  left: 0;
+  height: inherit;
+}
+
+.header .logo-wrapper .logo {
+  width: 58px;
+  height: 58px;
+  background-image: url("../images/logo.png");
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.header .logo-wrapper .text {
+  height: 24px;
+  width: 260px;
+  background-image: url("../images/top_text.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 110px;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.header .links-wrapper {
+  position: absolute;
+  right: 0;
+  height: inherit;
+  box-sizing: border-box;
+}
+
+.header .wrapper .links-wrapper a {
+  cursor: pointer;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 90px;
+  height: inherit;
+  display: inline-block;
+  box-sizing: border-box;
+  width: auto;
+  margin-left: 30px;
+}
+
+.header .wrapper a:hover {
+  color: #D5D5D8;
+  border-bottom: 4px solid #D5D5D8;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  height: inherit;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.top {
+  height: 650px;
+  background-image: url("../images/top_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top .title {
+  padding-top: 210px;
+  text-align: center;
+  background-image: url("../images/yunlu_text.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  height: 46px;
+}
+
+.top .content {
+  margin: 50px 0 76px 0;
+  font-size: 24px;
+  color: #FAF7FB;
+  text-align: center;
+}
+
+.top .download-wrapper {
+  height: 200px;
+  width: 1190px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.top .download-wrapper .qr-wrapper {
+  height: inherit;
+}
+
+.top .download-wrapper .qr-wrapper img {
+  height: 140px;
+  width: 140px;
+}
+
+.top .download {
+  display: inline-block;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 74px;
+}
+
+.top .download .btn {
+  display: inline-block;
+  width: 240px;
+  height: 60px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.top .download a:hover {
+  opacity: 0.8
+}
+
+.top .download .ios {
+  background-image: url("../images/ios.png");
+  margin-right: 60px;
+}
+
+.top .download .android {
+  background-image: url("../images/andorid.png");
+  margin-left: 60px;
+}
+
+.top .options {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.top .options .select-options {
+  position: absolute;
+  background-color: #FFF;
+  width: 180px;
+  -webkit-box-shadow: 0px 5px 20px 4px rgba(107, 104, 104, 0.25);
+          box-shadow: 0px 5px 20px 4px rgba(107, 104, 104, 0.25);
+  z-index: 1;
+}
+
+.top .options .select-options a {
+  color: #595959;
+  font-size: 18px;
+  text-decoration: none;
+  height: inherit;
+  display: block;
+}
+
+.top .options .select-options li a:hover {
+  opacity: 1;
+  background-color: #F5F5F5;
+}
+
+.top .options .btn-container,
+.top .options .btn {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  background-color: #52CAA7;
+  font-size: 20px;
+  line-height: 50px;
+  color: #FFF;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.top .options a:hover {
+  opacity: .8;
+}
+
+.top .options .right {
+  margin-right: 0;
+  margin-left: 25px;
+}
+
+.section-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 100%;
+}
+
+.see {
+  background-image: url("../images/see_bg.png");
+}
+
+.section-bg .text-img {
+  position: absolute;
+  top: 48px;
+  width: 136px;
+  height: 45px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.section-bg .text {
+  position: absolute;
+  top: 130px;
+  font-size: 20px;
+  color: #747474;
+}
+
+.see .text-img {
+  right: 0px;
+  background-image: url("../images/see_text.png");
+}
+
+.see .text {
+  right: 44px;
+}
+
+.cloud {
+  background-image: url("../images/cloud_bg.png");
+}
+
+.cloud .text-img {
+  left: 0px;
+  background-image: url("../images/cloud_text.png");
+}
+
+.cloud .text {
+  left: 44px;
+}
+
+.work {
+  height: 650px;
+  background-image: url("../images/work_bg.png");
+}
+
+.work .tips {
+  font-size: 50px;
+  color: #FFF;
+  margin-bottom: 120px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.work .items .row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 130px 0 130px;
+  margin-bottom: 58px;
+}
+
+.work .items .bottom {
+  margin-bottom: 0;
+}
+
+.work .items .row .item {
+  height: 130px;
+}
+
+.work .container .items .row .item div {
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 83px;
+  height: 83px;
+}
+
+.work .container .items .row .item p {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #FFF;
+  text-align: center;
+}
+
+.work .container .items .row .item .person {
+  background-image: url("../images/person.png");
+}
+
+.work .container .items .row .item .enterprise {
+  background-image: url("../images/enterprise.png");
+}
+
+.work .container .items .row .item .mall {
+  background-image: url("../images/mall.png");
+}
+
+.work .container .items .row .item .association {
+  background-image: url("../images/association.png");
+}
+
+.work .container .items .row .item .class {
+  background-image: url("../images/class.png");
+}
+
+.work .container .items .row .item .alumni {
+  background-image: url("../images/alumni.png");
+}
+
+.contact {
+  background-image: url("../images/contact_bg.png");
+}
+
+.contact .text-img {
+  right: 0px;
+  background-image: url("../images/contact_text.png");
+}
+
+.contact .text {
+  right: 44px;
+}
+
+.space {
+  background-image: url("../images/space_bg.png");
+}
+
+.space .text-img {
+  left: 0px;
+  background-image: url("../images/space_text.png");
+}
+
+.space .text {
+  left: 44px;
+}
+
+.footer {
+  background-image: url("../images/footer_bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer .container .content-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 46px;
+}
+
+.footer .container .content-title hr {
+  width: 100px;
+}
+
+.footer .container .content-title span {
+  font-size: 30px;
+  color: #D5D5D8;
+  margin: 0 30px 0 30px;
+}
+
+.footer .container .content {
+  float: left;
+  margin-top: 70px;
+}
+
+.footer .container .content .content-item {
+  font-size: 18px;
+  color: #D5D5D8;
+  text-align: left;
+  margin-bottom: 45px;
+}
+
+.footer .container .content .bottom {
+  margin-bottom: 0;
+}
+
+.footer .container .content .content-item i {
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 30px;
+}
+
+.footer .container .content .content-item .tel {
+  background-image: url("../images/tel_icon.png");
+}
+
+.footer .container .content .content-item .mail {
+  background-image: url("../images/mail_icon.png");
+}
+
+.footer .container .content .content-item .address {
+  background-image: url("../images/address_icon.png");
+}
+
+.footer .container .content .content-item .link {
+  background-image: url("../images/link_icon.png");
+}
+
+.footer .container .content .content-item .link-text {
+  display: inline-block;
+}
+
+.footer .container .content .content-item .link-text a {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 20px 0 20px;
+}
+
+.footer .container .content .content-item .link-text a:link {
+  color: #D5D5D8;
+}
+
+.footer .container .content .content-item .link-text a:visited {
+  color: #D5D5D8;
+}
+
+.footer .container .content .content-item .link-text a:hover {
+  color: #AFAFF5;
+}
+
+.footer .container .content .content-item .link-text a:active {
+  color: #AFAFF5;
+}
+
+.footer .container .qr-code-container {
+  float: left;
+  margin-top: 70px;
+  width: 400px;
+  text-align: right;
+  position: relative;
+}
+
+.footer .container .qr-code-container .qr-code-img {
+  clear: both;
+  float: right;
+  background-image: url("../images/qrcode.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  width: 151px;
+  height: 230px;
+}
+
+.footer .container .qr-code-container p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #D5D5D8;
+  width: 151px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.copyright {
+  height: 80px;
+  background-color: #080215;
+  color: #D5D5D8;
+  width: 100%;
+  font-size: 18px;
+}
+
+.copyright .container {
+  clear: both;
+  width: 1000px;
+  margin: 0 auto;
+  height: inherit;
+  line-height: 80px;
+  text-align: center;
+}
+
+
+/* } */

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>云庐认证公示</title>
+		<link href="assets/train.css" rel="stylesheet" type="text/css" />
+		<script src="assets/vue.min.js"></script>
+		<style type="text/css" media="print">
+			.noprint { display:none;}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<div class="top noprint">
+				<div class="comwidtn">云庐认证公示</div>
+			</div>
+			<div class="comwidtn publicity noprint" v-for="list in lists">
+				<h5>{{list.batch}}班</h5>
+				<ul class="items">
+					<li class="clearfix item">
+						<div>姓名</div>
+						<div>编号</div>
+						<div>级别</div>
+						<div>代管公司</div>
+					</li>
+					<li class="clearfix item" v-for="option in list.options">
+						<div @click="openCard(option)">{{option.name}}</div>
+						<div @click="openCard(option)">{{option.num}}</div>
+						<div @click="openCard(option)">
+							{{level(option.rank)}}
+							<i :style="{background: 'url(assets/rank' + option.rank +'.png)'}"></i>
+						</div>
+						<div :class="option.companys.join().length > 22? 'down': ''" @click="open(option.companys,$event)" @mouseleave="close($event)">
+							<span>{{companys(option.companys)}}</span>
+							<ul @click.stop.prevent="clos($event)">
+								<li v-for="company in option.companys">{{company}}</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="foot noprint">Copyright © 云庐数据.All rights reserved. 鄂ICP备15015354号-1</div>
+			<div class="mask noprint" v-show="isOpen" @click="closeCard"></div>
+			<div class="card" v-show="isOpen">
+			</div>
+			<div class="btn noprint" v-show="isOpen" @click="preview">打印</div>
+		</div>
+		<script>
+			var vm = new Vue({
+		    el:'#page',
+		    data:{
+		    		isOpen: false,
+		    		ranks: '',
+		    		lists: [{
+		    			batch: '1703',
+		    			options: [{
+		    				name: '刘加健',num: '170301',rank: 2,companys: ["上海诺联实业有限公司"]
+		    			},{
+		    				name: '刘新平',num: '170302',rank: 2,companys: ["江西省天狼建设工程有限公司"]
+		    			},{
+		    				name: '齐瑶',num: '170303',rank: 1,companys: []
+		    			}]	
+	    			},{
+		    			batch: '1702',
+		    			options: [{
+		    				name: '袁玉珍',num: '170201',rank: 1,companys: []
+		    			},{
+		    				name: '刘雨心',num: '170202',rank: 1,companys: []
+		    			},{
+		    				name: '季勇',num: '170203',rank: 1,companys: []
+		    			},{
+		    				name: '王东昭',num: '170204',rank: 1,companys: []
+		    			},{
+		    				name: '刘红',num: '170205',rank: 1,companys: []
+		    			},{
+		    				name: '王小慧',num: '170206',rank: 1,companys: []
+	    				},{
+		    				name: '汪峰',num: '170207',rank: 1,companys: []
+		    			},{
+		    				name: '王丽卿	',num: '170208',rank: 1,companys: []
+		    			},{
+		    				name: '高传荔',num: '170209',rank: 1,companys: []
+		    			},{
+		    				name: '于飞',num: '170210',rank: 1,companys: []
+		    			},{
+		    				name: '许阳',num: '170211',rank: 1,companys: []
+		    			},{
+		    				name: '苏珽禛',num: '170212',rank: 1,companys: []
+		    			},{
+		    				name: '黄嘉义',num: '170213',rank: 1,companys: []
+		    			},{
+		    				name: '罗清',num: '170214',rank: 1,companys: []
+		    			},{
+		    				name: '祝菲',num: '170215',rank: 1,companys: []
+		    			}]
+		    		},{
+		    			batch: '1701',
+		    			options: [{
+		    				name: '刘乔',num: '170101',rank: 1,companys: []
+		    			},{
+		    				name: '魏光华',num: '170102',rank: 2,companys: ["泉州锦鸿进出口有限公司"]
+		    			},{
+		    				name: '倪美芳',num: '170103',rank: 1,companys: []
+		    			},{
+		    				name: '吴雄英',num: '170104',rank: 1,companys: []
+		    			},{
+		    				name: '何玲',num: '170105',rank: 1,companys: []
+		    			},{
+		    				name: '陈桂梅',num: '170106',rank: 1,companys: []
+		    			},{
+		    				name: '孟磊',num: '170107',rank: 2,companys: ["安康和兴环保建材有限公司"]
+		    			},{
+		    				name: '孟健',num: '170108',rank: 2,companys: ["河北星烁锯业股份有限公司","溆浦县宏利石材有限责任公司","玉田县京昌锯业有限责任公司","井冈山市易安石业发展有限公司","拉米拉电子商务有限公司"]
+		    			},{
+		    				name: '郭超华',num: '170109',rank: 2,companys: ["湖南金六谷药业有限公司"]
+		    			},{
+		    				name: '谢振森',num: '170110',rank: 1,companys: []
+		    			},{
+		    				name: '庄铭洋',num: '170111',rank: 1,companys: []
+		    			},{
+		    				name: '魏伟忠',num: '170112',rank: 1,companys: []
+		    			},{
+		    				name: '沈力',num: '170113',rank: 1,companys: []
+		    			},{
+		    				name: '蔡春生',num: '170114',rank: 1,companys: []
+		    			},{
+		    				name: '裘索',num: '170115',rank: 1,companys: []
+		    			},{
+		    				name: '刘凯森',num: '170116',rank: 1,companys: []
+		    			},{
+		    				name: '李光明',num: '170117',rank: 2,companys: ["福建省晋江市和盛机械有限公司"]
+		    			},{
+		    				name: '刘加建',num: '170118',rank: 1,companys: []
+		    			},{
+		    				name: '魏玉佳',num: '170119',rank: 1,companys: []
+		    			},{
+		    				name: '鲁德娇',num: '170120	',rank: 2,companys: ["武汉楚正和珠宝首饰有限责任公司	"]
+		    			},{
+		    				name: '彭易志',num: '170121',rank: 1,companys: []
+		    			},{
+		    				name: '刘虎',num: '170122',rank: 2,companys: ["南昌三维测绘仪器有限公司"]
+		    			},{
+		    				name: '吴海波',num: '170123',rank: 3,companys: ["红安将军红山茶油有限公司","武汉市武昌区名恒泰家具经营部","武汉市城中渔港餐饮有限公司","钟祥元佑旅游管理有限公司","武汉叁加贰餐饮管理有限公司","红安县传统绣活铺","随州市金辉石业有限公司","武汉市兴建丰石业有限公司","武汉市蔡甸区金鑫华美石材经营部"]
+		    			},{
+		    				name: '彭开彦',num: '170124',rank: 2,companys: ["武汉市黄陂区荣宇电器经营部","武汉市洪山区兴鸿泰科技经营部","武汉市德立固材料股份有限公司","湖北京山潭龙石材有限公司","武汉金磊石材有限公司"]
+		    			}]
+		    		}],
+		    		level: function(k) {
+		    			if (k == 1) {
+		    				return '管理员';
+		    			} else if (k == 2) {
+		    				return '管理师';
+		    			} else {
+		    				return '资深管理师';
+		    			}
+		    		},
+		    		companys: function(y) {
+		    			if (y.length == 0) {
+		    				return "无";
+		    			} else {
+		    				return y.join("、");
+		    			}
+		    		}
+		    },
+		    ready:{
+		    		
+		    },
+		    methods:{
+		    		open: function(k,el) {
+		    			if (k.join().length > 22) {
+		    				el.currentTarget.children[1].style.display = "block";
+		    			}
+		    		},
+		    		close: function(el) {
+		    			el.currentTarget.children[1].style.display = "";
+		    		},
+		    		clos: function(el) {
+		    			el.currentTarget.style.display = "";
+		    		},
+		    		openCard: function(d) {
+		    			this.isOpen = !this.isOpen;
+		    			if (d.rank == 1) {
+		    				this.ranks = "管理员";
+		    			} else if (d.rank == 2) {
+		    				this.ranks = "管理师";
+		    			} else {
+		    				this.ranks = "资深管理师";
+		    			}
+		    			document.getElementsByClassName("card")[0].innerHTML = 
+		    			'<dl style="width:610px;height:320px;border-bottom:40px solid #28a7e1;font-family:"微软雅黑";">' +
+			    			'<dt style="float: left;margin: 60px 0 0 102px;">' +
+								'<img style="width: 174px;" src="assets/code.jpg" />' +
+								'<p style="color: #28a7e1;font-size: 27px;text-align: center;">云庐应用认证</p>' +
+							'</dt>' +
+							'<dd style="float: left;margin: 100px 0 0 84px;">' +
+								'<p style="font-size: 34px;color: #28a7e1;margin-bottom: 40px;">' + d.name + '</p>' +
+								'<p style="font-size: 17px;color: #595656;margin-bottom: 16px;">' + this.ranks + '</p>' +
+								'<p style="font-size: 17px;color: #595656;margin-bottom: 16px;">学员编号：' + d.num + '</p>' +
+							'</dd>' +
+						'</dl>';
+		    		},
+		    		closeCard: function() {
+		    			this.isOpen = !this.isOpen;
+		    		},
+		    		preview: function() {
+		        window.document.body.innerHTML = document.getElementsByClassName("card")[0].innerHTML;
+		        window.print();
+						setTimeout(function() {
+							window.location.reload();
+						}, 100);
+		    		}
+		    }
+		  })
+		</script>
+	</body>
+</html>
