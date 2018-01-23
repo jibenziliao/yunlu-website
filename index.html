@@ -20,9 +20,50 @@
           <div class="text"></div>
         </div>
         <div class="links-wrapper">
-          <a href="https://web.yunlu6.com">手机官网</a>
-          <a href="./train/index.html" target="_blank">认证公示</a>
-          <a>云庐其它应用</a>
+          <div class="nav">
+            <a href="https://web.yunlu6.com">手机官网</a>
+          </div>
+          <div class="nav">
+            <a href="./train/index.html" target="_blank">认证公示</a>
+          </div>
+          <div class="options">
+            <a class="btn">云庐其它应用</a>
+            <ul>
+              <li>
+                <a href="http://www.360stones.com/bestone.apk">百石堂</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/medicament.apk">医药通</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/collection.apk">云庐藏品</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/plotting.apk">云庐测绘</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/tea.apk">云庐茶业</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/chemical.apk">云庐化工</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/furniture.apk">云庐家具</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/ore.apk">云庐矿业</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/travel.apk">云庐旅游</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/shoe.apk">云庐鞋业</a>
+              </li>
+              <li>
+                <a href="http://www.yunlu6.com/estate.apk">云庐房地产</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -35,56 +76,10 @@
           <p>扫描二维码下载APP</p>
         </div>
         <div class="download-links">
-
+          <a class="btn ios" href="https://itunes.apple.com/cn/app/yun-lu/id1040721645?mt=8" target="_blank"></a>
+          <a class="btn android" href="http://www.yunlu6.com/yunlu.apk"></a>
         </div>
       </div>
-      <!-- <div class="download">
-        <a class="btn ios" href="https://itunes.apple.com/cn/app/yun-lu/id1040721645?mt=8" target="_blank"></a>
-        <a class="btn android" href="http://www.yunlu6.com/yunlu.apk"></a>
-      </div>
-      <div class="options">
-        <div class="btn-container">
-          <a class="btn" id="select-btn" onmouseover="showSelectOptions();" onmouseout="hideSelectOptions();" onclick="showSelectOptions();">
-            云庐其他应用
-          </a>
-          <ul class="select-options hidden" id="select-options" onmouseover="showOptions();" onmouseout="hideOptions();">
-            <li>
-              <a href="http://www.360stones.com/bestone.apk">百石堂</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/medicament.apk">医药通</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/collection.apk">云庐藏品</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/plotting.apk">云庐测绘</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/tea.apk">云庐茶业</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/chemical.apk">云庐化工</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/furniture.apk">云庐家具</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/ore.apk">云庐矿业</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/travel.apk">云庐旅游</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/shoe.apk">云庐鞋业</a>
-            </li>
-            <li>
-              <a href="http://www.yunlu6.com/estate.apk">云庐房地产</a>
-            </li>
-          </ul>
-        </div>
-        <a href="./train/index.html" target="_blank" class="btn right">认证公示</a>
-      </div> -->
     </div>
     <div class="section-bg see">
       <div class="container">
@@ -200,9 +195,6 @@
     </div>
     <script>
       let btnFlag = false
-      let optionFlag = false
-      let btnTimer = null
-      let optionTimer = null
 
       function isPC() {
         let userAgentInfo = navigator.userAgent
@@ -215,42 +207,6 @@
           }
         }
         return flag
-      }
-
-      function showSelectOptions() {
-        btnFlag = true
-        if (btnTimer) {
-          clearTimeout(btnTimer)
-        }
-        document.getElementById('select-options').className = 'select-options'
-      }
-
-      function hideSelectOptions() {
-        btnTimer = setTimeout(function () {
-          btnFlag = false
-          if (optionFlag === false) {
-            document.getElementById('select-options').className = 'select-options hidden'
-          } else {
-            console.log('leave-btn enter-option')
-          }
-        }, 100)
-      }
-
-      function showOptions() {
-        optionFlag = true
-        if (optionTimer) {
-          clearTimeout(optionTimer)
-        }
-        document.getElementById('select-options').className = 'select-options'
-      }
-
-      function hideOptions() {
-        optionTimer = setTimeout(function () {
-          optionFlag = false
-          if (btnFlag === false) {
-            document.getElementById('select-options').className = 'select-options hidden'
-          } else {}
-        }, 100)
       }
 
     </script>
