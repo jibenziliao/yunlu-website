@@ -974,6 +974,9 @@ table {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+  .header .logo-wrapper a {
+    display: none;
+  }
   .header .logo-wrapper .text {
     height: 21px;
     width: 219px;
@@ -1403,6 +1406,9 @@ table {
     height: inherit;
     line-height: 80px;
     text-align: center;
+  }
+  .copyright .container .xs {
+    display: none;
   }
   .xs-popup {
     display: none;
