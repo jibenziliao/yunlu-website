@@ -540,12 +540,26 @@ table {
     width: 100%;
     height: 260px;
     background-color: #FFF;
+    position: relative;
   }
   .xs-popup .pop-body .pop-body-top {
     height: 150px;
     width: 300px;
     background-color: #FEEBDB;
     position: relative;
+  }
+  .xs-popup .pop-body .white-bg {
+    background-color: #FFF;
+  }
+  .xs-popup .pop-body .white-bg .download-img-bg {
+    position: absolute;
+    bottom: 0;
+    background-image: url("../images/download_wechat.jpg");
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
   .xs-popup .pop-body .pop-body-top .pop-body-top-bg {
     position: absolute;
@@ -564,6 +578,15 @@ table {
     font-size: 14px;
     margin: 20px 0 14px 0;
     color: #595959;
+  }
+  .xs-popup .pop-body .white-bg p {
+    font-size: 14px;
+    color: #595959;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 22px;
+    margin: 0 auto;
   }
   .xs-popup .pop-body a {
     display: block;
@@ -882,6 +905,7 @@ table {
     height: 260px;
     background-color: #FFF;
     border-radius: 10px;
+    position: relative;
   }
   .xs-popup .pop-body .pop-body-top {
     height: 150px;
@@ -890,6 +914,19 @@ table {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
+  }
+  .xs-popup .pop-body .white-bg {
+    background-color: #FFF;
+  }
+  .xs-popup .pop-body .white-bg .download-img-bg {
+    position: absolute;
+    bottom: 0;
+    background-image: url("../images/download_wechat.jpg");
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
   .xs-popup .pop-body .pop-body-top .pop-body-top-bg {
     position: absolute;
@@ -908,6 +945,15 @@ table {
     font-size: 14px;
     margin: 20px 0 14px 0;
     color: #595959;
+  }
+  .xs-popup .pop-body .white-bg p {
+    font-size: 14px;
+    color: #595959;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 22px;
+    margin: 0 auto;
   }
   .xs-popup .pop-body a {
     display: block;

@@ -75,7 +75,7 @@
         <p class="m-sub-content">驱动社会生态迭代进化的云场景(数字化)工具</p>
         <p class="content">以人为本，弘扬正能量，驱动社会生态迭代进化的云场景(数字化)工具</p>
       </div>
-      <a class="m-download" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yunlu6.yunlu">立即下载</a>
+      <a class="m-download" href="javascript:void(0);" onclick="downloadApp()">立即下载</a>
       <div class="flex-h-center download-wrapper">
         <div class="qr-wrapper">
           <div class="img-wrapper">
@@ -214,9 +214,38 @@
         </div>
       </div>
     </div>
+    <div class="xs-popup hidden" id="wechat">
+      <div class="pop-bg"></div>
+      <div class="pop-wrapper">
+        <div class="pop-body">
+          <div class="white-bg">
+            <p>请选择在浏览器中打开</p>
+            <div class="download-img-bg"></div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <img src="./images/m_close.png" onclick="closeDownloadPopup();">
+        </div>
+      </div>
+    </div>
     <script>
       function closePopup() {
         window.document.querySelector('#popup').style.display = 'none'
+      }
+      function closeDownloadPopup() {
+        window.document.querySelector('#wechat').style.display = 'none'
+      }
+      function downloadApp() {
+        var u = navigator.userAgent
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+        var isWeChat = u.toLowerCase().indexOf('micromessenger') > -1
+        if (isiOS) {
+          window.location.href = 'https://itunes.apple.com/cn/app/yun-lu/id1040721645?mt=8'
+        } else if (isWeChat) {
+          window.document.querySelector('#wechat').style.display = 'block'
+        } else {
+          window.location.href = 'https://www.yunlu6.com/yunlu.apk'
+        }
       }
     </script>
   </body>
