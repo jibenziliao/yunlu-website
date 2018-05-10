@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>云庐，个人现实生活的云端全映射</title>
+    <script>
+      var os = function () {
+        var ua = navigator.userAgent,
+          isQB = /(?:MQQBrowser|QQ)/.test(ua),
+          isWindowsPhone = /(?:Windows Phone)/.test(ua),
+          isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+          isAndroid = /(?:Android)/.test(ua),
+          isFireFox = /(?:Firefox)/.test(ua),
+          isChrome = /(?:Chrome|CriOS)/.test(ua),
+          isIpad = /(?:iPad|PlayBook)/.test(ua),
+          isTablet = /(?:iPad|PlayBook)/.test(ua) ||
+          (isFireFox && /(?:Tablet)/.test(ua)),
+          isSafari = /(?:Safari)/.test(ua),
+          isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+          isOpen = /(?:OperaMini) /.test(ua),
+          isUC = /(?:UCWEB|UCBrowser)/.test(ua),
+          isPc = !isPhone && !isAndroid && !isSymbian
+        return {
+          isQB: isQB,
+          isTablet: isTablet,
+          isPhone: isPhone,
+          isAndroid: isAndroid,
+          isPc: isPc,
+          isOpen: isOpen,
+          isUC: isUC,
+          isIpad: isIpad
+        }
+      }()
+      var origin = window.location.origin
+      var searchstr = window.location.search
+      var hashstr = window.location.hash
+      if (os.isPc) {
+        window.location.replace(origin + '/' + searchstr + hashstr)
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <div>
+      这是移动端看到的页面
+    </div>
+  </body>
+
+</html>
