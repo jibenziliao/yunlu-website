@@ -1,0 +1,749 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
+ */
+
+/** 清除内外边距 **/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+/* structural elements 结构元素 */
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/* list elements 列表元素 */
+
+pre,
+/* text formatting elements 文本格式元素 */
+
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+/* form elements 表单元素 */
+
+th,
+td
+/* table elements 表格元素 */
+
+  {
+  margin: 0;
+  padding: 0;
+}
+
+/** 设置默认字体 **/
+
+body,
+button,
+input,
+select,
+textarea
+/* for ie */
+
+  {
+  font: 12px/1.2 \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+/* 将斜体扶正 */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+
+/* 统一等宽字体 */
+
+small {
+  font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+
+ul,
+ol {
+  list-style: none;
+}
+
+/** 重置文本格式元素 **/
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/** 禁用苹果设备默认的点击半透明背景 **/
+
+div,
+a,
+img,
+span,
+p,
+ul,
+li,
+input {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/** 重置表单元素 **/
+
+legend {
+  color: #000;
+}
+
+/* for ie6 */
+
+fieldset,
+img {
+  border: 0;
+}
+
+/* img 搭车：让链接里的 img 无边框 */
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/** 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 **/
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #F5F5F5;
+}
+
+/** 定义滚动条轨道 内阴影+圆角 **/
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/** 定义滑块 内阴影+圆角 **/
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flex-v-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.flex-h-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(90deg, #061032 0%, #2C2560 50%, #061032 100%);
+  z-index: 1;
+}
+
+.container {
+  height: inherit;
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header .container .logo {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header .container .header-text {
+  left: 94px;
+  width: 252px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header .container .navs {
+  height: inherit;
+  line-height: 90px;
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+
+.header .container .navs a {
+  display: inline-block;
+  margin-right: 46px;
+  cursor: pointer;
+  height: inherit;
+  box-sizing: border-box;
+}
+
+.header .container .navs a:last-child {
+  margin-right: 0;
+}
+
+.header .container .navs a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.banner {
+  background-image: url("../images/banner_bg.jpg");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 630px;
+  margin-top: 90px;
+}
+
+.banner .bg {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.banner .phone-img {
+  background-image: url("../images/yunshi.png");
+  width: 270px;
+  height: 580px;
+  top: 127px;
+  left: 143px;
+}
+
+.banner .banner-text {
+  background-image: url("../images/banner_title.png");
+  width: 299px;
+  height: 28px;
+  top: 182px;
+  left: 490px;
+}
+
+.banner .banner-description {
+  background-image: url("../images/banner_description.png");
+  width: 629px;
+  height: 29px;
+  top: 233px;
+  left: 490px;
+}
+
+.banner .download-qr {
+  position: absolute;
+  top: 336px;
+  left: 490px;
+  width: 170px;
+  height: auto;
+}
+
+.banner .download-qr .qr-bg {
+  width: 170px;
+  height: 170px;
+  background-image: url("../images//yunlu_download_qr.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner .download-qr p {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #ccddfb;
+}
+
+.banner .download-buttons {
+  position: absolute;
+  right: 230px;
+  top: 336px;
+  height: 170px;
+}
+
+.banner .download-buttons a {
+  width: 220px;
+  height: 60px;
+  line-height: 60px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 34px;
+}
+
+.banner .download-buttons a:last-child {
+  margin-bottom: 0;
+}
+
+.banner .download-buttons a img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.banner .download-buttons a .active {
+  display: none;
+}
+
+.banner .download-buttons a:hover {
+  background-color: #fff;
+  color: #38307e;
+  transition: all 0.2s ease-in-out;
+}
+
+.banner .download-buttons a:hover span {
+  color: #38307e;
+}
+
+.banner .download-buttons a:hover .inactive {
+  display: inline-block;
+}
+
+.banner .download-buttons a:hover .active {
+  display: inline-block;
+}
+
+.banner .download-buttons a span {
+  font-size: 20px;
+  color: #fff;
+  margin-left: 60px;
+}
+
+.section-container {
+  width: 1000px;
+  margin: 0 auto;
+  height: inherit;
+  position: relative;
+}
+
+.section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.section-a {
+  background-image: url("../images/section_a/section_a_bg.png");
+  height: 743px;
+}
+
+.section-a .section-title {
+  background-image: url("../images/section_a/qiyeshuzihua.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 192px;
+  height: 53px;
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-a p {
+  position: absolute;
+  top: 137px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #8888a7;
+  white-space: nowrap;
+}
+
+.section-a .description-wrapper {
+  position: absolute;
+  left: 93px;
+  top: 340px;
+  width: 300px;
+  height: auto;
+}
+
+.section-a .description-wrapper .title {
+  background-image: url("../images/section_a/shuzimingpian.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 161px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.section-a .description-wrapper .item-wrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.section-a .description-wrapper .item-wrapper .img-box {
+  width: 83px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 22px;
+}
+
+.section-a .description-wrapper .item-wrapper .img-box:last-child {
+  margin-right: 0;
+}
+
+.section-a .description-wrapper .item-wrapper .img-box img {
+  width: 83px;
+  height: 83px;
+  display: block;
+}
+
+.section-a .description-wrapper .item-wrapper .img-box span {
+  font-size: 20px;
+  color: #8b8ba7;
+  margin-top: 12px;
+}
+
+.section-a .phone-wrapper {
+  position: absolute;
+  right: 66px;
+  bottom: 8px;
+}
+
+.section-a .phone-wrapper .phone {
+  position: absolute;
+  right: 43px;
+  background-image: url("../images/section_a/section_a_phone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 530px;
+  width: 260px;
+  bottom: 0;
+}
+
+.section-a .phone-wrapper .option-bar {
+  position: absolute;
+  bottom: 354px;
+  right: 56px;
+  width: 357px;
+  height: 62px;
+}
+
+.section-a .phone-wrapper .send {
+  position: absolute;
+  bottom: 36px;
+  right: 0;
+  width: 151px;
+  height: 61px;
+}
+
+.section-b {
+  background-color: #fff;
+  height: 600px;
+}
+
+.section-b .phone-wrapper {
+  position: absolute;
+  left: 79px;
+  top: 65px;
+}
+
+.section-b .phone-wrapper .phone {
+  background-image: url("../images/section_b/phone_bg.png");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 256px;
+  height: 519px;
+}
+
+.section-b .phone-wrapper .example {
+  position: absolute;
+  top: 131px;
+  left: 16px;
+  width: 352px;
+  height: 121px;
+}
+
+.section-b .description-wrapper {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 410px;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.section-b .description-wrapper .title {
+  width: 155px;
+  height: 38px;
+  margin: 0 auto;
+  background-image: url("../images/section_b/yidongguanwang.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.section-b .description-wrapper .item-wrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.section-b .description-wrapper .item-wrapper .img-box {
+  width: 83px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 22px;
+}
+
+.section-b .description-wrapper .item-wrapper .img-box:last-child {
+  margin-right: 0;
+}
+
+.section-b .description-wrapper .item-wrapper .img-box span {
+  font-size: 20px;
+  color: #8b8ba7;
+}
+
+.section-c {
+  background-image: url("../images/section_c/sectoin_c_bg.png");
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-c .description-wrapper {
+  position: absolute;
+  left: 93px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+}
+
+.section-c .description-wrapper .title {
+  background-image: url("../images//section_c/kehuguanli.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 166px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.section-c .description-wrapper .item-wrapper {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.section-c .description-wrapper .item-wrapper .img-box {
+  width: 83px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 22px;
+}
+
+.section-c .description-wrapper .item-wrapper .img-box:last-child {
+  margin-right: 0;
+}
+
+.section-c .description-wrapper .item-wrapper .img-box span {
+  font-size: 20px;
+  color: #8b8ba7;
+}
+
+.section-c .phone-wrapper {
+  position: absolute;
+  right: 109px;
+  top: 65px;
+}
+
+.section-c .phone-wrapper .phone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("../images/section_c/phone.png");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 258px;
+  height: 523px;
+}
+
+.section-c .phone-wrapper .example {
+  position: absolute;
+  right: 4px;
+  top: 203px;
+}
+
+.section-d {
+  background-color: #fff;
+  height: 600px;
+  width: 100%;
+}
+
+.section-d .phone-wrapper {
+  position: absolute;
+  left: 79px;
+  top: 65px;
+}
+
+.section-d .phone-wrapper .phone {
+  background-image: url("../images/section_d/phone.png");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  width: 256px;
+  height: 519px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.section-d .phone-wrapper .example {
+  position: absolute;
+  left: 16px;
+  top: 251px;
+}
+
+.section-d .description-wrapper {
+  position: absolute;
+  top: 214px;
+  right: 125px;
+  width: 300px;
+  height: 170px;
+}
+
+.section-d .description-wrapper .title {
+  background-image: url("../images//section_d/yidongbangong.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 162px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.section-d .description-wrapper .item-wrapper {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.section-d .description-wrapper .item-wrapper .img-box {
+  width: 83px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 22px;
+}
+
+.section-d .description-wrapper .item-wrapper .img-box:last-child {
+  margin-right: 0;
+}
+
+.section-d .description-wrapper .item-wrapper .img-box span {
+  font-size: 20px;
+  color: #8b8ba7;
+}
