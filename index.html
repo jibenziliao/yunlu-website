@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
     <title>云庐，个人现实生活的云端全映射</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
     <script>
       var os = function () {
         var ua = navigator.userAgent,
@@ -43,6 +45,105 @@
       if (os.isAndroid || os.isPhone) {
         window.location.replace(origin + '/mobile/' + searchstr + hashstr)
       }
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var currentIndex = 1
+        var targetIndex = 1
+        var targetDoms = [{
+          id: '#card-1',
+          domIndex: 1
+        }, {
+          id: '#card-2',
+          domIndex: 2
+        }, {
+          id: '#card-3',
+          domIndex: 3
+        }, {
+          id: '#card-4',
+          domIndex: 4
+        }, {
+          id: '#card-5',
+          domIndex: 5
+        }, {
+          id: '#card-6',
+          domIndex: 6
+        }]
+        var carousel = $("#carousel-wrapper").waterwheelCarousel({
+          flankingItems: 3,
+          startingItem: 1,
+          separation: 200,
+          edgeFadeEnabled: false,
+          horizonOffsetMultiplier: .7,
+          autoPlay: 0,
+          movingToCenter: function ($item) {
+            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedToCenter: function ($item) {
+            currentIndex = parseInt($item.context.id.substr(5, 1))
+            if (targetIndex > currentIndex) {
+              if (targetIndex - currentIndex > Math.floor(targetDoms.length / 2)) {
+                carousel.prev()
+              } else {
+                carousel.next()
+              }
+            } else if (targetIndex < currentIndex) {
+              if (currentIndex - targetIndex > Math.floor(targetDoms.length / 2)) {
+                carousel.next()
+              } else {
+                carousel.prev()
+              }
+            }
+            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movingFromCenter: function ($item) {
+            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedFromCenter: function ($item) {
+            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          clickedCenter: function ($item) {
+            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+          }
+        });
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+        $('#reload').bind('click', function () {
+          newOptions = eval("(" + $('#newoptions').val() + ")");
+          carousel.reload(newOptions);
+          return false;
+        });
+        targetDoms.forEach(function (item, index, targetDoms) {
+          $(item.id).bind('mouseover', function () {
+            targetIndex = item.domIndex
+            if (currentIndex - item.domIndex > 0) {
+              if (currentIndex - item.domIndex > Math.floor(targetDoms.length / 2)) {
+                carousel.next()
+              } else {
+                carousel.prev()
+              }
+              return false
+            } else if (currentIndex - item.domIndex < 0) {
+              if (item.domIndex - currentIndex > Math.floor(targetDoms.length / 2)) {
+                carousel.prev()
+              } else {
+                carousel.next()
+              }
+              return false
+            }
+          })
+        })
+        $("#carousel-wrapper").find('a').bind('click', function (event) {
+          targetIndex = parseInt(event.target.id.substr(5, 1))
+        })
+      });
 
     </script>
   </head>
@@ -91,28 +192,32 @@
     <div class="section section-a">
       <div class="section-container">
         <div class="section-title"></div>
-        <p>展示企业产能，多渠道营销获客，提供及时客服通道，提高客户成交率</p>
+        <p class="sub-title">展示企业产能，多渠道营销获客，提供及时客服通道，提高客户成交率</p>
         <div class="description-wrapper">
-          <div class="title"></div>
+          <div id="section-a-title" class="title"></div>
           <div class="item-wrapper">
             <div class="img-box">
-              <img class="icon-img" src="./images/section_a/dianzan.png">
-              <span>可互动</span>
+              <img id="section-a-img-1" class="icon-img" src="./images/section_a/dianzan.png">
+              <span id="section-a-span-1">可互动</span>
             </div>
             <div class="img-box">
-              <img class="icon-img" src="./images//section_a/guanlian.png">
-              <span>可关联</span>
+              <img id="section-a-img-2" class="icon-img" src="./images//section_a/guanlian.png">
+              <span id="section-a-span-2">可关联</span>
             </div>
             <div class="img-box">
-              <img class="icon-img" src="./images/section_a/fenxiang.png">
-              <span>可分享</span>
+              <img id="section-a-img-3" class="icon-img" src="./images/section_a/fenxiang.png">
+              <span id="section-a-span-3">可分享</span>
             </div>
           </div>
         </div>
+        <div class="qr-wrapper">
+          <div id="section-a-qr" class="qr-code"></div>
+          <p id="sectoin-a-qr-text">[扫码关注]</p>
+        </div>
         <div class="phone-wrapper">
           <div class="phone"></div>
-          <img class="option-bar" src="./images/section_a/option_bar.png">
-          <img class="send" src="./images/section_a/send.png">
+          <img id="section-a-bar" class="option-bar" src="./images/section_a/option_bar.png">
+          <img id="section-a-send" class="send" src="./images/section_a/send.png">
         </div>
       </div>
     </div>
@@ -193,8 +298,346 @@
             </div>
           </div>
         </div>
+        <div class="qr-wrapper">
+          <div class="qr-code"></div>
+          <p>[扫码关注]</p>
+        </div>
       </div>
     </div>
+    <div class="section-e">
+      <div class="section-container">
+        <div class="row">
+          <a class="item">自助电商</a>
+          <a class="item">社会营销</a>
+          <a class="item">订单管理</a>
+          <a class="item">定制上下游</a>
+        </div>
+        <div class="row bottom">
+          <a class="item">团队协作</a>
+          <a class="item">流程审核</a>
+          <a class="item">即时通讯</a>
+          <a class="item">更多...</a>
+        </div>
+      </div>
+    </div>
+    <div class="section-f">
+      <div class="section-f-container">
+        <div class="title"></div>
+        <p class="subtitle">完美拟合现实生活场景</p>
+        <div class="row">
+          <a id="card-1" class="item card-1"></a>
+          <a id="card-2" class="item card-2"></a>
+          <a id="card-3" class="item card-3"></a>
+          <a id="card-4" class="item card-4"></a>
+        </div>
+        <div class="row bottom">
+          <a id="card-5" class="item card-5"></a>
+          <a id="card-6" class="item card-6"></a>
+        </div>
+      </div>
+    </div>
+    <div class="section-g">
+      <div class="section-container">
+        <div class="wrapper">
+          <div id="carousel-wrapper" class="swiper-wrapper">
+            <a href="#">
+              <img src="./images/section_g/img_bg_1.jpg" id="item-1">
+            </a>
+            <a href="#">
+              <img src="./images/section_g/img_bg_2.jpg" id="item-2">
+            </a>
+            <a href="#">
+              <img src="./images/section_g/img_bg_3.jpg" id="item-3">
+            </a>
+            <a href="#">
+              <img src="./images/section_g/img_bg_4.jpg" id="item-4">
+            </a>
+            <a href="#">
+              <img src="./images/section_g/img_bg_5.jpg" id="item-5">
+            </a>
+            <a href="#">
+              <img src="./images/section_g/img_bg_6.jpg" id="item-6">
+            </a>
+          </div>
+          <div class="phone-cover"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-h">
+      <div class="section-container">
+        <div class="title"></div>
+        <p class="sub-title">各大应用市场均可下载</p>
+        <div class="row">
+          <div class="item">
+            <div class="bg bg-1">
+              <div class="logo logo-1"></div>
+              <p class="name">百石堂</p>
+              <p class="description">石制品</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.360stones.com/bestone.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>百石堂APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="bg bg-2">
+              <div class="logo logo-2"></div>
+              <p class="name">医药通</p>
+              <p class="description">医药</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.yunlu6.com/medicament.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>医药通APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="bg bg-3">
+              <div class="logo logo-3"></div>
+              <p class="name">云庐鞋业</p>
+              <p class="description">鞋</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.360stones.com/bestone.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>云庐鞋业APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bottom">
+          <div class="item">
+            <div class="bg bg-4">
+              <div class="logo logo-4"></div>
+              <p class="name">云庐茶通</p>
+              <p class="description">茶</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.yunlu6.com/tea.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>云庐茶通APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="bg bg-5">
+              <div class="logo logo-5"></div>
+              <p class="name">云庐测绘</p>
+              <p class="description">测绘</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.yunlu6.com/plotting.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>云庐测绘APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="bg bg-6">
+              <div class="logo logo-6"></div>
+              <p class="name">云庐矿业</p>
+              <p class="description">矿</p>
+            </div>
+            <div class="mask">
+              <div class="menu">
+                <a>
+                  <div>
+                    <img src="./images/section_h/erweima.png">
+                    <span>扫一扫下载APP</span>
+                  </div>
+                </a>
+                <a href="http://www.360stones.com/bestone.apk" target="_blank">
+                  <div>
+                    <img src="./images/section_h/xiazai.png">
+                    <span>云庐矿业APP下载</span>
+                  </div>
+                </a>
+                <a href="https://www.360stones.com" target="_blank">
+                  <div>
+                    <img src="./images/section_h/lianjie.png">
+                    <span>官网链接</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="title">
+          <hr size="1">
+          <span>联系我们</span>
+          <hr size="1">
+        </div>
+        <ul class="info">
+          <li>
+            <img src="./images/dianhua.png">
+            <span>联系电话：027-51111113</span>
+          </li>
+          <li>
+            <img src="./images/youxiang.png">
+            <span>邮箱：product@yunlu6.com</span>
+          </li>
+          <li>
+            <img src="./images/dizhi.png">
+            <span>地址：武汉市高新区光谷软件园四期E4-10</span>
+          </li>
+        </ul>
+        <div class="qr-code-wrapper">
+          <div class="qr-code"></div>
+          <p>官方微信</p>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright">
+      <div class="container">
+        <span>Copyright</span>
+        <span>&copy;</span>
+        <span>云庐数据</span>
+        <span>&nbsp;&nbsp;All rights reserved.&nbsp;&nbsp;</span>
+        <span>鄂ICP备15015354号-1</span>
+      </div>
+    </div>
+    <script>
+      var scrollMax = 0
+      var animationA = false
+      var animationB = false
+      var throttle = function (method, delay, time) {
+        var timeOut = null
+        var startTime = new Date()
+        return () => {
+          var curTime = new Date()
+          clearTimeout(timeOut)
+          // 如果达到了规定的触发时间间隔，触发 handler
+          if (curTime - startTime >= time) {
+            method.apply(this, arguments)
+            startTime = curTime
+            // 没达到触发间隔，重新设定定时器
+          } else {
+            timeOut = setTimeout(method, delay)
+          }
+        }
+      }
+      var scrollFn = function () {
+        // console.log('当前滚动高度', window.pageYOffset)
+        scrollMax = window.pageYOffset - scrollMax > 0 ? window.pageYOffset : scrollMax
+        // console.log('历史最大滚动高度', scrollMax)
+        if (window.pageYOffset >= 360) {
+          $('#section-a-title').removeClass('animation')
+        } else {
+          $('#section-a-title').addClass('animation')
+        }
+        if (window.pageYOffset >= 540) {
+          $('#section-a-img-1').removeClass('animation')
+          $('#section-a-img-2').removeClass('animation')
+          $('#section-a-img-3').removeClass('animation')
+          $('#section-a-span-1').removeClass('span-animation')
+          $('#section-a-span-2').removeClass('span-animation')
+          $('#section-a-span-3').removeClass('span-animation')
+          $('#section-a-qr').removeClass('animation')
+          $('#sectoin-a-qr-text').removeClass('p-animation')
+          $('#section-a-bar').removeClass('animation')
+          $('#section-a-send').removeClass('img-animation')
+        } else {
+          $('#section-a-img-1').addClass('animation')
+          $('#section-a-img-2').addClass('animation')
+          $('#section-a-img-3').addClass('animation')
+          $('#section-a-span-1').addClass('span-animation')
+          $('#section-a-span-2').addClass('span-animation')
+          $('#section-a-span-3').addClass('span-animation')
+          $('#section-a-qr').addClass('animation')
+          $('#sectoin-a-qr-text').addClass('p-animation')
+          $('#section-a-bar').addClass('animation')
+          $('#section-a-send').addClass('img-animation')
+        }
+      }
+      $(window).scroll(throttle(scrollFn, 200, 200))
+    </script>
   </body>
 
 </html>
