@@ -8,6 +8,8 @@
     <title>云庐，个人现实生活的云端全映射</title>
     <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/index.css">
+    <!-- a标签另起页面跳转 -->
+    <base href="" target="_blank">
     <script>
       var os = function () {
         var ua = navigator.userAgent,
@@ -43,6 +45,15 @@
         window.location.replace(origin + '/' + searchstr + hashstr)
       }
 
+      // 下载不同终端的app
+      function goDownload() {
+        if (os.isAndroid) {
+          window.location.href = 'http://www.yunlu6.com/yunlu.apk';
+        } else if (os.isPhone) {
+          window.location.href = 'https://itunes.apple.com/cn/app/yun-lu/id1040721645?mt=8';
+        }
+      }
+
     </script>
   </head>
 
@@ -52,7 +63,7 @@
         <div class="header">
           <img src="./images/display/logo.png" alt="云庐" class="logo">
           <img src="./images/display/describe.png" alt="" class="describe">
-          <a class="download_header" href="#">下载APP</a>
+          <a class="download_header" onclick="goDownload()">下载APP</a>
         </div>
         <div class="banner">
           <div class="description">
@@ -60,7 +71,7 @@
             <img src="./images/display/text_1.png" alt="" class="text_1">
             <img src="./images/display/text_2.png" alt="" class="text_2">
           </div>
-          <a href="#" class="goDownload">
+          <a class="goDownload" onclick="goDownload()">
             <span class="text">立即下载</span>
             <img src="./images/display/download.png" alt="" class="download">
           </a>
@@ -138,79 +149,79 @@
             <img src="./images/industrialization/1.png" alt="">
             <h3>白石堂</h3>
             <p>石制品</p>
-            <a href="#">下载</a>
+            <a href="http://www.360stones.com/bestone.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/2.png" alt="">
             <h3>医药通</h3>
             <p>医药</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/medicament.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/3.png" alt="">
             <h3>云庐鞋业</h3>
             <p>鞋</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/shoe.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/4.png" alt="">
             <h3>云庐茶通</h3>
             <p>茶</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/tea.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/5.png" alt="">
             <h3>云庐测绘</h3>
             <p>测绘</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/plotting.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/6.png" alt="">
             <h3>云庐矿业</h3>
             <p>矿</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/ore.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/7.png" alt="">
             <h3>云庐家具</h3>
             <p>家具</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/furniture.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/8.png" alt="">
             <h3>云庐房地产</h3>
             <p>房地产</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/estate.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/9.png" alt="">
             <h3>云庐化工</h3>
             <p>化工</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/chemical.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/10.png" alt="">
             <h3>云庐机械</h3>
             <p>机械</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/machine.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/11.png" alt="">
             <h3>云庐藏品</h3>
             <p>藏品</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/collection.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/12.png" alt="">
             <h3>云庐旅游</h3>
             <p>旅游</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/travel.apk">下载</a>
           </li>
           <li>
             <img src="./images/industrialization/13.png" alt="">
             <h3>云庐服装</h3>
             <p>服装</p>
-            <a href="#">下载</a>
+            <a href="http://www.yunlu6.com/clothes.apk">下载</a>
           </li>
         </ul>
       </div>
