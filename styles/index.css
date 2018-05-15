@@ -267,13 +267,13 @@ table {
 .header .container .navs {
   height: inherit;
   line-height: 90px;
-  font-size: 16px;
-  color: #fff;
   position: absolute;
   right: 0;
 }
 
 .header .container .navs a {
+  color: #fff;
+  font-size: 16px;
   display: inline-block;
   margin-right: 46px;
   cursor: pointer;
