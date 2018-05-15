@@ -8,7 +8,7 @@ body {
 
 /* ------------display板块------------ */
 .display {
-  margin-bottom: 16px;
+  width: 100%;
 }
 .header {
   width: 100%;
@@ -55,15 +55,17 @@ body {
 .header .download_header {
   display: block;
   position: absolute;
+  top: 50%;
   right: 16px;
+  transform: translateY(-50%);
   width: 90px;
   height: 32px;
+  line-height: 32px;
+  text-align: center;
   font-size: 13px;
   color: #79f4db;
-  border: 2px solid #79f4db;
+  border: 1px solid #79f4db;
   border-radius: 16px;
-  text-align: center;
-  line-height: 32px;
 }
 .banner {
   position: relative;
@@ -96,25 +98,26 @@ body {
   height: 14px;
 }
 .goDownload {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 201.5px;
   height: 40px;
-  /* display: block;
-    line-height: 40px;
-    text-align: center; */
+  display: block;
+  line-height: 40px;
+  text-align: center;
   background-color: #52caa7;
   border-radius: 20px;
   margin: 0 auto;
+  position: relative;
 }
 .goDownload .text {
   font-size: 17px;
   color: #fff;
-  margin-right: 19px;
 }
 .goDownload .download {
   height: 15px;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
 }
 
 /* ------------企业数字化板块------------ */
@@ -123,18 +126,18 @@ body {
   text-align: center;
   overflow: hidden;
 }
+/* ------数字名片板块------ */
 .enterprise .enterpriseDig {
   width: 84px;
   margin: 0 auto;
   display: block;
   margin-bottom: 7.5px;
+  margin-top: 16px;
 }
 .enterprise .text {
   font-size: 11px;
   color: #8b8ba7;
-  margin-bottom: 28.5px;
 }
-/* ------数字名片板块------ */
 .enterprise .numCardContainer {
   width: 100%;
   background-image: url("../images/enterprise/mobileBg_1.png");
@@ -143,18 +146,18 @@ body {
   background-size: cover;
   overflow: hidden;
   position: relative;
-  margin-bottom: 57px;
 }
 .enterprise .numCardContainer .mobileFrame_1 {
   margin: 0 auto;
   width: 30%;
   display: block;
   margin-bottom: 21px;
+  margin-top: 28.5px;
 }
 .enterprise .numCardContainer .numCard {
   width: 60%;
   position: absolute;
-  top: 111px;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -162,24 +165,25 @@ body {
   margin: 0 auto;
   display: block;
   width: 9px;
+  margin-bottom: 15px;
 }
 /* ------移动官网板块------ */
 .enterprise .officialWebContainer {
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin-bottom: 57px;
 }
 .enterprise .officialWebContainer .mobileFrame_1 {
   margin: 0 auto;
   width: 30%;
   display: block;
   margin-bottom: 21px;
+  margin-top: 57px;
 }
 .enterprise .officialWebContainer .numCard {
   width: 60%;
   position: absolute;
-  top: 111px;
+  top: 168px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -187,6 +191,7 @@ body {
   margin: 0 auto;
   display: block;
   width: 9px;
+  margin-bottom: 15px;
 }
 /* ------客户管理板块------ */
 .enterprise .cusManageContainer {
@@ -203,11 +208,12 @@ body {
   width: 30%;
   display: block;
   margin-bottom: 21px;
+  margin-top: 57px;
 }
 .enterprise .cusManageContainer .numCard {
   width: 60%;
   position: absolute;
-  top: 111px;
+  top: 168px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -215,6 +221,7 @@ body {
   margin: 0 auto;
   display: block;
   width: 9px;
+  margin-bottom: 15px;
 }
 /* ------移动办公板块------ */
 .enterprise .mobOfficingContainer {
@@ -227,11 +234,12 @@ body {
   width: 30%;
   display: block;
   margin-bottom: 21px;
+  margin-top: 57px;
 }
 .enterprise .mobOfficingContainer .numCard {
   width: 60%;
   position: absolute;
-  top: 111px;
+  top: 168px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -239,6 +247,7 @@ body {
   margin: 0 auto;
   display: block;
   width: 9px;
+  margin-bottom: 15px;
 }
 /* ------八宫格板块------ */
 .butContainer {
@@ -253,40 +262,43 @@ body {
   margin-bottom: 16px;
 }
 .butContainer ul {
-    width: 100%;
+  width: 100%;
 }
 .butContainer ul li {
-    float: left;
-    /* width: 66.5px; */
-    width: 22%;
-    height: 33.5px;
-    line-height: 33.5px;
-    text-align: center;
-    background-image: url("../images/enterprise/butBg.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    /* margin: 0 13.5px 23px 0; */
-    margin-right: 4%;
-    margin-bottom: 23px;
+  float: left;
+  /* width: 66.5px; */
+  width: 22%;
+  height: 33.5px;
+  line-height: 33.5px;
+  text-align: center;
+  background-image: url("../images/enterprise/butBg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* margin: 0 13.5px 23px 0; */
+  margin-right: 4%;
+  margin-bottom: 23px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .butContainer ul li:nth-child(4n) {
-    margin-right: 0;
+  margin-right: 0;
 }
 .butContainer ul li:nth-child(n + 5) {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 .butContainer ul li a {
-    font-size: 10px;
-    color: #E1DCFB;
-    font-weight: 700;
+  font-size: 10px;
+  color: #e1dcfb;
+  font-weight: 700;
 }
 
 /* ------------场景应用板块------------ */
 .scene {
   width: 100%;
   text-align: center;
-  border-bottom: 5px solid #F1F1F1;
+  border-bottom: 5px solid #f1f1f1;
   margin-bottom: 20px;
 }
 .scene .sceneApplication {
@@ -303,12 +315,13 @@ body {
 .sceneContainer {
   width: 100%;
   padding: 0 3px 27px 3px;
+  box-sizing: border-box;
 }
 .sceneContainer img {
   display: block;
   width: 23%;
   float: left;
-  margin:0 7px 6px 0;
+  margin: 0 7px 6px 0;
 }
 .sceneContainer img:nth-child(4n) {
   margin-right: 0;
@@ -346,20 +359,17 @@ body {
   border-bottom: 25px solid transparent;
   box-sizing: border-box;
 }
-/* .industrialization ul li:nth-child(4n) {
-  border-right: 0;
-}
-.industrialization ul li:nth-child(n + 12) {
-  border-bottom: 0;
-} */
 .industrialization ul li img {
   width: 100%;
 }
 .industrialization ul li h3 {
   font-size: 13px;
-  color: #1F194E;
+  color: #1f194e;
   margin-bottom: 9.5px;
   text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .industrialization ul li p {
   font-size: 11px;
@@ -371,12 +381,12 @@ body {
   display: block;
   width: 100%;
   height: 25px;
-  line-height: 25px;
+  line-height: 2.2;
   text-align: center;
   border: 1px solid rgb(73, 174, 250);
   border-radius: 2px;
-  color: #55B3FA;
-  font-size: 11px;
+  color: #55b3fa;
+  font-size: 12px;
 }
 
 /* ------------footer板块------------ */
@@ -387,5 +397,28 @@ body {
   text-align: center;
   font-size: 11px;
   color: #d5d5d8;
-  background-color: rgb(18, 10, 78);
+  background: -webkit-linear-gradient(
+    left,
+    #0d154a,
+    #322a6c,
+    #0d154a
+  ); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(
+    right,
+    #0d154a,
+    #322a6c,
+    #0d154a
+  ); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    #0d154a,
+    #322a6c,
+    #0d154a
+  ); /* Firefox 3.6 - 15 */
+  background: linear-gradient(
+    to right,
+    #0d154a,
+    #322a6c,
+    #0d154a
+  ); /* 标准的语法 */
 }
