@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>云庐，个人现实生活的云端全映射</title>
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <script>
+      var os = function () {
+        var ua = navigator.userAgent,
+          isQB = /(?:MQQBrowser|QQ)/.test(ua),
+          isWindowsPhone = /(?:Windows Phone)/.test(ua),
+          isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+          isAndroid = /(?:Android)/.test(ua),
+          isFireFox = /(?:Firefox)/.test(ua),
+          isChrome = /(?:Chrome|CriOS)/.test(ua),
+          isIpad = /(?:iPad|PlayBook)/.test(ua),
+          isTablet = /(?:iPad|PlayBook)/.test(ua) ||
+            (isFireFox && /(?:Tablet)/.test(ua)),
+          isSafari = /(?:Safari)/.test(ua),
+          isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+          isOpen = /(?:OperaMini) /.test(ua),
+          isUC = /(?:UCWEB|UCBrowser)/.test(ua),
+          isPc = !isPhone && !isAndroid && !isSymbian
+        return {
+          isQB: isQB,
+          isTablet: isTablet,
+          isPhone: isPhone,
+          isAndroid: isAndroid,
+          isPc: isPc,
+          isOpen: isOpen,
+          isUC: isUC,
+          isIpad: isIpad
+        }
+      }()
+      var origin = window.location.origin
+      var searchstr = window.location.search
+      var hashstr = window.location.hash
+      if (os.isPc) {
+        window.location.replace(origin + '/' + searchstr + hashstr)
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="display">
+        <div class="header">
+          <img src="./images/display/logo.png" alt="云庐" class="logo">
+          <img src="./images/display/describe.png" alt="" class="describe">
+          <a class="download_header" href="#">下载APP</a>
+        </div>
+        <div class="banner">
+          <div class="description">
+            <img src="./images/display/textLogo.png" alt="" class="text_1">
+            <img src="./images/display/text_1.png" alt="" class="text_1">
+            <img src="./images/display/text_2.png" alt="" class="text_2">
+          </div>
+          <a href="#" class="goDownload">
+            <span class="text">立即下载</span>
+            <img src="./images/display/download.png" alt="" class="download">
+          </a>
+        </div>
+      </div>
+      <div class="enterprise">
+        <div class="numCardContainer">
+          <img src="./images/enterprise/enterpriseDig.png" alt="" class="enterpriseDig">
+          <div class="text">展示企业产能，多渠道营销获客，提供及时客服通道，提高客户成交率</div>
+          <img src="./images/enterprise/mobileFrame_1.png" alt="" class="mobileFrame_1">
+          <img src="./images/enterprise/numCard.png" alt="" class="numCard">
+          <img src="./images/enterprise/twoPoint.png" alt="" class="twoPoint">
+        </div>
+        <div class="officialWebContainer">
+          <img src="./images/enterprise/mobileFrame_2.png" alt="" class="mobileFrame_1">
+          <img src="./images/enterprise/officialWeb.png" alt="" class="numCard">
+          <img src="./images/enterprise/twoPoint.png" alt="" class="twoPoint">
+        </div>
+        <div class="cusManageContainer">
+          <img src="./images/enterprise/mobileFrame_3.png" alt="" class="mobileFrame_1">
+          <img src="./images/enterprise/cusManage.png" alt="" class="numCard">
+          <img src="./images/enterprise/twoPoint.png" alt="" class="twoPoint">
+        </div>
+        <div class="mobOfficingContainer">
+          <img src="./images/enterprise/mobileFrame_4.png" alt="" class="mobileFrame_1">
+          <img src="./images/enterprise/mobileOfficing.png" alt="" class="numCard">
+          <img src="./images/enterprise/twoPoint.png" alt="" class="twoPoint">
+        </div>
+        <div class="butContainer">
+          <ul class="clearfix">
+            <li>
+              <a href="#">自主电商</a>
+            </li>
+            <li>
+              <a href="#">社会营销</a>
+            </li>
+            <li>
+              <a href="#">订单管理</a>
+            </li>
+            <li>
+              <a href="#">定位上下游</a>
+            </li>
+            <li>
+              <a href="#">团队协作</a>
+            </li>
+            <li>
+              <a href="#">流程审核</a>
+            </li>
+            <li>
+              <a href="#">即时通讯</a>
+            </li>
+            <li>
+              <a href="#">更多...</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene clearfix">
+        <img src="./images/scene/sceneApplication.png" alt="" class="sceneApplication">
+        <div class="text">完美拟合显示生活场景</div>
+        <div class="sceneContainer clearfix">
+          <img src="./images/scene/association.png" alt="">
+          <img src="./images/scene/alumni.png" alt="">
+          <img src="./images/scene/mall.png" alt="">
+          <img src="./images/scene/county.png" alt="">
+          <img src="./images/scene/assist.png" alt="">
+          <img src="./images/scene/graduation.png" alt="">
+        </div>
+      </div>
+      <div class="industrialization">
+        <img src="./images/industrialization/industrialization.png" alt="" class="industrializationApp">
+        <div class="text">各大应用市场均可下载（仅支持安卓版本）</div>
+        <ul class="clearfix">
+          <li>
+            <img src="./images/industrialization/1.png" alt="">
+            <h3>白石堂</h3>
+            <p>石制品</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/2.png" alt="">
+            <h3>医药通</h3>
+            <p>医药</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/3.png" alt="">
+            <h3>云庐鞋业</h3>
+            <p>鞋</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/4.png" alt="">
+            <h3>云庐茶通</h3>
+            <p>茶</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/5.png" alt="">
+            <h3>云庐测绘</h3>
+            <p>测绘</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/6.png" alt="">
+            <h3>云庐矿业</h3>
+            <p>矿</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/7.png" alt="">
+            <h3>云庐家具</h3>
+            <p>家具</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/8.png" alt="">
+            <h3>云庐房地产</h3>
+            <p>房地产</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/9.png" alt="">
+            <h3>云庐化工</h3>
+            <p>化工</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/10.png" alt="">
+            <h3>云庐机械</h3>
+            <p>机械</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/11.png" alt="">
+            <h3>云庐藏品</h3>
+            <p>藏品</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/12.png" alt="">
+            <h3>云庐旅游</h3>
+            <p>旅游</p>
+            <a href="#">下载</a>
+          </li>
+          <li>
+            <img src="./images/industrialization/13.png" alt="">
+            <h3>云庐服装</h3>
+            <p>服装</p>
+            <a href="#">下载</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">&copy; 2018 云庐 鄂ICP备15015354号-1</div>
+    </div>
+  </body>
+
+</html>
