@@ -294,7 +294,8 @@ table {
 }
 
 .header .container .navs a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #60f4fe;
+  color: #60f4fe;
 }
 
 .banner {
@@ -1270,16 +1271,18 @@ table {
 }
 
 .section-f {
-  height: 700px;
+  height: 410px;
   background-color: #fff;
   width: 100%;
 }
 
 .section-f-container {
   position: relative;
-  width: 1105px;
+  width: 1104px;
   margin: 0 auto;
   height: inherit;
+  padding-top: 60px;
+  box-sizing: border-box;
 }
 
 .section-f .title {
@@ -1290,7 +1293,6 @@ table {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
-  margin-top: 60px;
   margin-bottom: 22px;
 }
 
@@ -1302,19 +1304,22 @@ table {
 }
 
 .section-f .row {
-  height: 220px;
+  height: 160px;
   width: 100%;
-  letter-spacing: -4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 60px;
 }
 
 .section-f .row .item {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 220px;
-  height: 220px;
+  width: 160px;
+  height: 160px;
   display: inline-block;
-  margin-right: 75px;
   cursor: pointer;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1325,10 +1330,6 @@ table {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   -webkit-transform: translate3d(0, -2px, 0);
   transform: translate3d(0, -2px, 0);
-}
-
-.section-f .row .item:last-child {
-  margin-right: 0;
 }
 
 .section-f .row .card-1 {
@@ -1353,10 +1354,6 @@ table {
 
 .section-f .row .card-6 {
   background-image: url("../images/section_f/card_6.png");
-}
-
-.section-f .bottom {
-  margin-top: 13px;
 }
 
 .section-g {
