@@ -73,11 +73,12 @@
           domIndex: 6
         }]
         var carousel = $("#carousel-wrapper").waterwheelCarousel({
-          flankingItems: 3,
+          flankingItems: 2,
           startingItem: 1,
-          separation: 200,
+          separation: 230,
           edgeFadeEnabled: false,
-          horizonOffsetMultiplier: .7,
+          separationMultiplier: 0.85,
+          sizeMultiplier: 0.9,
           autoPlay: 0,
           movingToCenter: function ($item) {
             $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
@@ -332,8 +333,6 @@
           <a id="card-2" class="item card-2"></a>
           <a id="card-3" class="item card-3"></a>
           <a id="card-4" class="item card-4"></a>
-        </div>
-        <div class="row bottom">
           <a id="card-5" class="item card-5"></a>
           <a id="card-6" class="item card-6"></a>
         </div>
