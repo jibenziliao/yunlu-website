@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link href="styles/index.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/index.css" type="text/css">
     <link rel="stylesheet" href="styles/swiper-4.2.6.min.css">
     <title>云庐，个人现实生活的云端全映射</title>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -83,7 +83,7 @@
             $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
           },
           movedToCenter: function ($item) {
-            currentIndex = parseInt($item.context.id.substr(5, 1))
+            currentIndex = parseInt($item[0].id.substr(5, 1))
             if (targetIndex > currentIndex) {
               if (targetIndex - currentIndex > Math.floor(targetDoms.length / 2)) {
                 carousel.prev()
@@ -157,10 +157,10 @@
         <img class="logo" src="./images/yunlu_logo.png">
         <img class="header-text" src="./images/header_text.png">
         <div class="navs">
-          <a class="item" href="https://web.yunlu6.com/information/1209?name=%E4%BA%91%E5%BA%90%E6%95%B0%E6%8D%AE">
+          <a class="item" href="https://web.yunlu6.com/information/1209?name=%E4%BA%91%E5%BA%90%E6%95%B0%E6%8D%AE" target="_blank">
             云庐资讯
           </a>
-          <a class="item" href="https://web.yunlu6.com">
+          <a class="item" href="https://web.yunlu6.com" target="_blank">
             手机官网
           </a>
           <a class="item" href="./train/index.html">
@@ -370,353 +370,355 @@
       <div class="section-container">
         <div class="title"></div>
         <p class="sub-title">各大应用市场均可下载</p>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div id="section-h-tab-1" class="swiper-slide">
-              <div class="row">
-                <div class="item">
-                  <div class="bg bg-1">
-                    <div class="logo logo-1"></div>
-                    <p class="name">百石堂</p>
-                    <p class="description">石制品</p>
+        <div class="wrapper">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div id="section-h-tab-1" class="swiper-slide">
+                <div class="row">
+                  <div class="item">
+                    <div class="bg bg-1">
+                      <div class="logo logo-1"></div>
+                      <p class="name">百石堂</p>
+                      <p class="description">石制品</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-1">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/bestone.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>百石堂APP下载</span>
+                          </div>
+                        </a>
+                        <a href="https://www.360stones.com" target="_blank">
+                          <div>
+                            <img src="./images/section_h/lianjie.png">
+                            <span>官网链接</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-1">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/bestone.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>百石堂APP下载</span>
-                        </div>
-                      </a>
-                      <a href="https://www.360stones.com" target="_blank">
-                        <div>
-                          <img src="./images/section_h/lianjie.png">
-                          <span>官网链接</span>
-                        </div>
-                      </a>
+                  <div class="item">
+                    <div class="bg bg-2">
+                      <div class="logo logo-2"></div>
+                      <p class="name">医药通</p>
+                      <p class="description">医药</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-2">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/medicament.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>医药通APP下载</span>
+                          </div>
+                        </a>
+                        <a href="http://www.yunlu0.com" target="_blank">
+                          <div>
+                            <img src="./images/section_h/lianjie.png">
+                            <span>官网链接</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="bg bg-3">
+                      <div class="logo logo-3"></div>
+                      <p class="name">云庐鞋业</p>
+                      <p class="description">鞋</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-3">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/shoe.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐鞋业APP下载</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="bg bg-2">
-                    <div class="logo logo-2"></div>
-                    <p class="name">医药通</p>
-                    <p class="description">医药</p>
+                <div class="row bottom">
+                  <div class="item">
+                    <div class="bg bg-4">
+                      <div class="logo logo-4"></div>
+                      <p class="name">云庐茶通</p>
+                      <p class="description">茶</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-4">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/tea.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐茶通APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-2">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/medicament.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>医药通APP下载</span>
-                        </div>
-                      </a>
-                      <a href="http://www.yunlu0.com" target="_blank">
-                        <div>
-                          <img src="./images/section_h/lianjie.png">
-                          <span>官网链接</span>
-                        </div>
-                      </a>
+                  <div class="item">
+                    <div class="bg bg-5">
+                      <div class="logo logo-5"></div>
+                      <p class="name">云庐测绘</p>
+                      <p class="description">测绘</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-5">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/plotting.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐测绘APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="bg bg-6">
+                      <div class="logo logo-6"></div>
+                      <p class="name">云庐矿业</p>
+                      <p class="description">矿</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-6">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/ore.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐矿业APP下载</span>
+                          </div>
+                        </a>
+                        <a href="http://www.yunlu4.com" target="_blank">
+                          <div>
+                            <img src="./images/section_h/lianjie.png">
+                            <span>官网链接</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="bg bg-3">
-                    <div class="logo logo-3"></div>
-                    <p class="name">云庐鞋业</p>
-                    <p class="description">鞋</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-3">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/shoe.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐鞋业APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <div id="section-h-qr-1" class="qr-wrapper"></div>
+                <div id="section-h-qr-2" class="qr-wrapper qr-wrapper-t-2"></div>
+                <div id="section-h-qr-3" class="qr-wrapper qr-wrapper-t-3"></div>
+                <div id="section-h-qr-4" class="qr-wrapper qr-wrapper-b-1"></div>
+                <div id="section-h-qr-5" class="qr-wrapper qr-wrapper-b-2"></div>
+                <div id="section-h-qr-6" class="qr-wrapper qr-wrapper-b-3"></div>
               </div>
-              <div class="row bottom">
-                <div class="item">
-                  <div class="bg bg-4">
-                    <div class="logo logo-4"></div>
-                    <p class="name">云庐茶通</p>
-                    <p class="description">茶</p>
+              <div id="section-h-tab-2" class="swiper-slide">
+                <div class="row">
+                  <div class="item">
+                    <div class="bg bg-1">
+                      <div class="logo logo-7"></div>
+                      <p class="name">云庐旅游</p>
+                      <p class="description">旅游</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-7">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/travel.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐旅游APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-4">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/tea.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐茶通APP下载</span>
-                        </div>
-                      </a>
+                  <div class="item">
+                    <div class="bg bg-2">
+                      <div class="logo logo-8"></div>
+                      <p class="name">云庐化工</p>
+                      <p class="description">化工</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-8">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/chemical.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐化工APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="bg bg-3">
+                      <div class="logo logo-9"></div>
+                      <p class="name">云庐服装</p>
+                      <p class="description">服装</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-9">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/clothes.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐服装APP下载</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="bg bg-5">
-                    <div class="logo logo-5"></div>
-                    <p class="name">云庐测绘</p>
-                    <p class="description">测绘</p>
+                <div class="row bottom">
+                  <div class="item">
+                    <div class="bg bg-4">
+                      <div class="logo logo-10"></div>
+                      <p class="name">云庐房地产</p>
+                      <p class="description">房地产</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-10">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/estate.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐房地产APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-5">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/plotting.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐测绘APP下载</span>
-                        </div>
-                      </a>
+                  <div class="item">
+                    <div class="bg bg-5">
+                      <div class="logo logo-11"></div>
+                      <p class="name">云庐家具</p>
+                      <p class="description">家具</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-11">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/furniture.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐家具APP下载</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="bg bg-6">
+                      <div class="logo logo-12"></div>
+                      <p class="name">云庐机械</p>
+                      <p class="description">机械</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-12">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/machine.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐机械APP下载</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="bg bg-6">
-                    <div class="logo logo-6"></div>
-                    <p class="name">云庐矿业</p>
-                    <p class="description">矿</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-6">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/ore.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐矿业APP下载</span>
-                        </div>
-                      </a>
-                      <a href="http://www.yunlu4.com" target="_blank">
-                        <div>
-                          <img src="./images/section_h/lianjie.png">
-                          <span>官网链接</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <div id="section-h-qr-7" class="qr-wrapper"></div>
+                <div id="section-h-qr-8" class="qr-wrapper qr-wrapper-t-2"></div>
+                <div id="section-h-qr-9" class="qr-wrapper qr-wrapper-t-3"></div>
+                <div id="section-h-qr-10" class="qr-wrapper qr-wrapper-b-1"></div>
+                <div id="section-h-qr-11" class="qr-wrapper qr-wrapper-b-2"></div>
+                <div id="section-h-qr-12" class="qr-wrapper qr-wrapper-b-3"></div>
               </div>
-              <div id="section-h-qr-1" class="qr-wrapper"></div>
-              <div id="section-h-qr-2" class="qr-wrapper qr-wrapper-t-2"></div>
-              <div id="section-h-qr-3" class="qr-wrapper qr-wrapper-t-3"></div>
-              <div id="section-h-qr-4" class="qr-wrapper qr-wrapper-b-1"></div>
-              <div id="section-h-qr-5" class="qr-wrapper qr-wrapper-b-2"></div>
-              <div id="section-h-qr-6" class="qr-wrapper qr-wrapper-b-3"></div>
-            </div>
-            <div id="section-h-tab-2" class="swiper-slide">
-              <div class="row">
-                <div class="item">
-                  <div class="bg bg-1">
-                    <div class="logo logo-7"></div>
-                    <p class="name">云庐旅游</p>
-                    <p class="description">旅游</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-7">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/travel.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐旅游APP下载</span>
-                        </div>
-                      </a>
+              <div id="section-h-tab-3" class="swiper-slide">
+                <div class="row">
+                  <div class="item">
+                    <div class="bg bg-1">
+                      <div class="logo logo-13"></div>
+                      <p class="name">云庐藏品</p>
+                      <p class="description">藏品</p>
+                    </div>
+                    <div class="mask">
+                      <div class="menu">
+                        <a id="section-h-a-13">
+                          <div>
+                            <img src="./images/section_h/erweima.png">
+                            <span>扫一扫下载APP</span>
+                          </div>
+                        </a>
+                        <a href="https://www.yunlu6.com/collection.apk" target="_blank">
+                          <div>
+                            <img src="./images/section_h/xiazai.png">
+                            <span>云庐藏品APP下载</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="bg bg-2">
-                    <div class="logo logo-8"></div>
-                    <p class="name">云庐化工</p>
-                    <p class="description">化工</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-8">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/chemical.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐化工APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg bg-3">
-                    <div class="logo logo-9"></div>
-                    <p class="name">云庐服装</p>
-                    <p class="description">服装</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-9">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/clothes.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐服装APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <div id="section-h-qr-13" class="qr-wrapper"></div>
               </div>
-              <div class="row bottom">
-                <div class="item">
-                  <div class="bg bg-4">
-                    <div class="logo logo-10"></div>
-                    <p class="name">云庐房地产</p>
-                    <p class="description">房地产</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-10">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/estate.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐房地产APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg bg-5">
-                    <div class="logo logo-11"></div>
-                    <p class="name">云庐家具</p>
-                    <p class="description">家具</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-11">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/furniture.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐家具APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg bg-6">
-                    <div class="logo logo-12"></div>
-                    <p class="name">云庐机械</p>
-                    <p class="description">机械</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-12">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/machine.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐机械APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="section-h-qr-7" class="qr-wrapper"></div>
-              <div id="section-h-qr-8" class="qr-wrapper qr-wrapper-t-2"></div>
-              <div id="section-h-qr-9" class="qr-wrapper qr-wrapper-t-3"></div>
-              <div id="section-h-qr-10" class="qr-wrapper qr-wrapper-b-1"></div>
-              <div id="section-h-qr-11" class="qr-wrapper qr-wrapper-b-2"></div>
-              <div id="section-h-qr-12" class="qr-wrapper qr-wrapper-b-3"></div>
-            </div>
-            <div id="section-h-tab-3" class="swiper-slide">
-              <div class="row">
-                <div class="item">
-                  <div class="bg bg-1">
-                    <div class="logo logo-13"></div>
-                    <p class="name">云庐藏品</p>
-                    <p class="description">藏品</p>
-                  </div>
-                  <div class="mask">
-                    <div class="menu">
-                      <a id="section-h-a-13">
-                        <div>
-                          <img src="./images/section_h/erweima.png">
-                          <span>扫一扫下载APP</span>
-                        </div>
-                      </a>
-                      <a href="https://www.yunlu6.com/collection.apk" target="_blank">
-                        <div>
-                          <img src="./images/section_h/xiazai.png">
-                          <span>云庐藏品APP下载</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="section-h-qr-13" class="qr-wrapper"></div>
             </div>
           </div>
           <div class="swiper-button-prev"></div>
