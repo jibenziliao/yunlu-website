@@ -243,6 +243,8 @@ table {
   background-image: -webkit-gradient(linear, left top, right top, from(#061032), color-stop(50%, #2C2560), to(#061032));
   background-image: linear-gradient(90deg, #061032 0%, #2C2560 50%, #061032 100%);
   z-index: 11;
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -1282,6 +1284,7 @@ table {
   margin: 0 auto;
   height: inherit;
   padding-top: 60px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -1306,8 +1309,14 @@ table {
 .section-f .row {
   height: 160px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: absolute;
   bottom: 60px;
@@ -1454,6 +1463,7 @@ table {
   width: 32px;
   height: 65px;
   margin-top: 0;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -1466,6 +1476,7 @@ table {
   width: 32px;
   height: 65px;
   margin-top: 0;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
