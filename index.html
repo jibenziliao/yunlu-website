@@ -73,11 +73,12 @@
           domIndex: 6
         }]
         var carousel = $("#carousel-wrapper").waterwheelCarousel({
-          flankingItems: 3,
+          flankingItems: 2,
           startingItem: 1,
-          separation: 200,
+          separation: 230,
           edgeFadeEnabled: false,
-          horizonOffsetMultiplier: .7,
+          separationMultiplier: 0.85,
+          sizeMultiplier: 0.9,
           autoPlay: 0,
           movingToCenter: function ($item) {
             $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
