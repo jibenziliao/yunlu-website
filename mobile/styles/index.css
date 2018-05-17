@@ -149,15 +149,15 @@ body {
 }
 .enterprise .numCardContainer .mobileFrame_1 {
   margin: 0 auto;
-  width: 30%;
+  width: 35%;
   display: block;
   margin-bottom: 21px;
   margin-top: 28.5px;
 }
 .enterprise .numCardContainer .numCard {
-  width: 60%;
+  width: 70%;
   position: absolute;
-  top: 200px;
+  top: 225px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -175,15 +175,15 @@ body {
 }
 .enterprise .officialWebContainer .mobileFrame_1 {
   margin: 0 auto;
-  width: 30%;
+  width: 35%;
   display: block;
   margin-bottom: 21px;
   margin-top: 57px;
 }
 .enterprise .officialWebContainer .numCard {
-  width: 60%;
+  width: 70%;
   position: absolute;
-  top: 168px;
+  top: 193px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -205,15 +205,15 @@ body {
 }
 .enterprise .cusManageContainer .mobileFrame_1 {
   margin: 0 auto;
-  width: 30%;
+  width: 35%;
   display: block;
   margin-bottom: 21px;
   margin-top: 57px;
 }
 .enterprise .cusManageContainer .numCard {
-  width: 60%;
+  width: 70%;
   position: absolute;
-  top: 168px;
+  top: 193px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -231,15 +231,15 @@ body {
 }
 .enterprise .mobOfficingContainer .mobileFrame_1 {
   margin: 0 auto;
-  width: 30%;
+  width: 35%;
   display: block;
   margin-bottom: 21px;
   margin-top: 57px;
 }
 .enterprise .mobOfficingContainer .numCard {
-  width: 60%;
+  width: 70%;
   position: absolute;
-  top: 168px;
+  top: 193px;
   left: 50%;
   transform: translateX(-50%);
 }
