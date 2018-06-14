@@ -1931,7 +1931,7 @@ table {
 }
 .contract-introduction .spider-btn {
   display: block;
-  margin: 16px 40px 0 0;
+  margin: 16px 0 0 12px;
   width: 104px;
   height: 31px;
   line-height: 31px;
