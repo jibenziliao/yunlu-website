@@ -1848,3 +1848,98 @@ table {
   background-image: -webkit-gradient(linear, left top, right top, from(#061032), color-stop(50%, #2C2560), to(#061032));
   background-image: linear-gradient(90deg, #061032 0%, #2C2560 50%, #061032 100%);
 }
+
+.card-introduction {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: rgba(0, 0, 0, .58);
+  z-index: 18;
+}
+.card-introduction .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.card-introduction .container .big-mobile-image {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+}
+.card-introduction .container .word-image {
+  display: block;
+  position: absolute;
+  left: 260px;
+  top: 44px;
+}
+.card-introduction .container .btn {
+  width: 151px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  left: 806px;
+  bottom: 12px;
+  background-image: url(../images/cardIntroduction/checkButton.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  color: #E0E1F8;
+}
+.card-introduction .container .qr-code-container {
+  width: 150px;
+  height: 150px;
+  background: rgba(163, 163, 163, .50);
+  position: absolute;
+  right: 53px;
+  top: 0;
+}
+.card-introduction .container .qr-code-container .scan {
+  margin: 0 auto;
+  display: block;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+.card-introduction .container .qr-code-container .qr-code {
+  margin: 0 auto;
+  display: block;
+  width: 109px;
+  height: 109px;
+  background-color: #fff;
+}
+.card-introduction .container .close {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  display: block;
+}
+
+.contract-introduction {
+  position: fixed;
+  bottom: 100px;
+  right: 0;
+  z-index: 18;
+  display: none;
+}
+.contract-introduction .small-mobile-image {
+  margin-right: 24px;
+  display: block;
+}
+.contract-introduction .spider-btn {
+  display: block;
+  margin: 16px 40px 0 0;
+  width: 104px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  color: #fff;
+  border-radius: 16px;
+  background: -webkit-linear-gradient(left, #8891ff , #a188ff); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #8891ff, #a188ff); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #8891ff, #a188ff); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #8891ff , #a188ff); /* 标准的语法 */
+}

@@ -761,6 +761,22 @@
         <span>鄂ICP备15015354号-1</span>
       </div>
     </div>
+    <div class="card-introduction">
+      <div class="container">
+        <img src="./images/cardIntroduction/bigMobileImage.png" class="big-mobile-image" alt="">
+        <img src="./images/cardIntroduction/wordImage.png" class="word-image" alt="">
+        <a href="#" class="btn">点击查看详情&gt;</a>
+        <div class="qr-code-container">
+          <img src="./images/cardIntroduction/scan.png" class="scan"></img>
+          <img src="" class="qr-code"></img>
+        </div>
+        <img src="./images/cardIntroduction/close.png" class="close" id="clickBtn"></img>
+      </div>
+    </div>
+    <div class="contract-introduction">
+      <img src="./images/cardIntroduction/smallMobileImage.png" class="small-mobile-image" alt="">
+      <a href="#" class="spider-btn">蛛网名片 &gt;</a>   
+    </div>
     <script>
       var qrArrays = [{
         id: '#section-h-a-1',
@@ -1121,7 +1137,11 @@
           })
         })
       })
-
+      $(function() {
+        $('#clickBtn').click(function() {
+          $('.card-introduction').animate({left: '100%'}).fadeOut(2000).siblings('.contract-introduction').fadeIn(2000)
+        })
+      })
     </script>
   </body>
 
