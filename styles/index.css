@@ -1909,13 +1909,13 @@ table {
   display: block;
   width: 109px;
   height: 109px;
-  background-color: #fff;
 }
 .card-introduction .container .close {
   position: absolute;
   top: 4px;
   right: 0;
   display: block;
+  cursor: pointer;
 }
 
 .contract-introduction {
