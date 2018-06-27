@@ -392,33 +392,23 @@ body {
 /* ------------footer板块------------ */
 .footer {
   width: 100%;
-  height: 50px;
-  line-height: 50px;
+  height: 80px;
   text-align: center;
   font-size: 11px;
-  color: #d5d5d8;
-  background: -webkit-linear-gradient(
-    left,
-    #0d154a,
-    #322a6c,
-    #0d154a
-  ); /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(
-    right,
-    #0d154a,
-    #322a6c,
-    #0d154a
-  ); /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(
-    right,
-    #0d154a,
-    #322a6c,
-    #0d154a
-  ); /* Firefox 3.6 - 15 */
-  background: linear-gradient(
-    to right,
-    #0d154a,
-    #322a6c,
-    #0d154a
-  ); /* 标准的语法 */
+  color: #777;
+  background-color: #e8ebec;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.copyright {
+  color: #777;
+}
+.record {
+  margin-top: 13px;
+}
+.record img {
+  margin-bottom: -5px;
+}
+.record a {
+  color: #777;
 }

@@ -1849,6 +1849,26 @@ table {
   background-image: linear-gradient(90deg, #061032 0%, #2C2560 50%, #061032 100%);
 }
 
+.copyright-label {
+  display: inline-block;
+  color: #d5d5d8;
+  line-height: 80px;
+  font-size: 16px;
+  margin-right: 109px;
+}
+
+.copyright-label img {
+  margin: 0 16px -5px 0;
+}
+
+.copyright-label a {
+  color: inherit;
+}
+
+.copyright-label:last-child {
+  margin-right: 0;
+}
+
 .card-introduction {
   position: fixed;
   bottom: 0;
